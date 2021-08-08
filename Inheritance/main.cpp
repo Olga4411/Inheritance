@@ -1,6 +1,9 @@
 #include<iostream>
 #include<string>
 using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
 
 
 
@@ -225,9 +228,10 @@ void main()
 	graduate.print();
 #endif // INHERITANCE
 
+#ifdef POLYMORFIZM
 	Human* group[] =
 	{
-		new Student ("Галлямутдинова", "Альбина",25, "РПО"," ВБУ_011", 95),
+		new Student("Галлямутдинова", "Альбина",25, "РПО"," ВБУ_011", 95),
 		new Graduate("Ремизов","Дмитрий",27,"РПО","ВБУ_011",95,"Фиг его знает"),
 		new Teacher("Einstein","Albert",142, "Astonomy",112),
 		new Student("Сорокина","Мария",22,"РПО","ВБУ_011",98)
@@ -237,4 +241,17 @@ void main()
 	{
 		group[i]->print();
 	}
+#endif // POLYMORFIZM
+	
+#define DataType unsigned long long int
+#ifdef TYPE
+	//typedef int DataType;// директива typedef создаем псевдоним для существующего типа данных
+	DataType arr[] = { 3,5,8,13,21,34 };
+	for (int i = 0; i < sizeof(arr) / sizeof(DataType); i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+#endif // TYPE
+
 }
